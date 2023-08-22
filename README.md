@@ -1,2 +1,2 @@
 # Intent_detection
-Simple audio classification pipeline of Data Science Lab group project
+The pipeline preprocess audio files by trimming silence, normalizing duration, and extracting Mel-frequency cepstral coefficients (MFCCs) as features. MFCCs are computed by taking the Fourier transform, mapping powers to the mel scale using triangular windows, taking logs of mel powers, and finally a discrete cosine transform. Outliers are detected by calculating Manhattan distance from the per-class mean MFCCs. SMOTE oversampling balances the dataset. An ensemble OneVsRest SVM model with tuned hyperparameters of C, gamma, and max iterations is trained on the features. This model achieves 98.8% accuracy in classifying the voice command intents.
